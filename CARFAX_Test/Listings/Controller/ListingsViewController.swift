@@ -127,6 +127,10 @@ private extension ListingsViewController {
         if let url = URL(string: "tel://" + dealerNumber),
             UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
+        } else {
+            self.showAlert(with: "The number is not valid, please try again", actions: [
+                UIAlertAction(title: "Ok", style: .default, handler: nil)
+            ])
         }
     }
 }
