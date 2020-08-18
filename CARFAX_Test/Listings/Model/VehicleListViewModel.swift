@@ -34,3 +34,14 @@ class VehicleListViewModel {
         self.vehicleDetail             = detail
     }
 }
+
+
+extension VehicleListViewModel: Hashable {
+    static func == (lhs: VehicleListViewModel, rhs: VehicleListViewModel) -> Bool {
+        lhs.vehicleDetail.id == rhs.vehicleDetail.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+      hasher.combine(vehicleDetail.id)
+    }
+}

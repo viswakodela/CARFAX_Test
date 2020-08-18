@@ -29,6 +29,7 @@
 		BDEF918E24EC4ECD00AF8F49 /* VehicleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF918D24EC4ECD00AF8F49 /* VehicleDetail.swift */; };
 		BDEF919124EC529000AF8F49 /* DataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF919024EC529000AF8F49 /* DataDecoder.swift */; };
 		BDEF919324EC561600AF8F49 /* VehicleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF919224EC561600AF8F49 /* VehicleListViewModel.swift */; };
+		BDEF919624EC5F3C00AF8F49 /* VehicleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF919524EC5F3C00AF8F49 /* VehicleListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		BDEF918D24EC4ECD00AF8F49 /* VehicleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetail.swift; sourceTree = "<group>"; };
 		BDEF919024EC529000AF8F49 /* DataDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDecoder.swift; sourceTree = "<group>"; };
 		BDEF919224EC561600AF8F49 /* VehicleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListViewModel.swift; sourceTree = "<group>"; };
+		BDEF919524EC5F3C00AF8F49 /* VehicleListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 			children = (
 				BDEF918124EC4B2000AF8F49 /* Api */,
 				BDEF918A24EC4D8800AF8F49 /* Model */,
+				BDEF919424EC5F2C00AF8F49 /* Cells */,
 				BDEF918024EC4B1600AF8F49 /* Controller */,
 			);
 			path = Listings;
@@ -225,6 +228,14 @@
 				BDEF919024EC529000AF8F49 /* DataDecoder.swift */,
 			);
 			path = Decoder;
+			sourceTree = "<group>";
+		};
+		BDEF919424EC5F2C00AF8F49 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BDEF919524EC5F3C00AF8F49 /* VehicleListCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +361,7 @@
 				BDEF914724EC3DE400AF8F49 /* SceneDelegate.swift in Sources */,
 				BDEF918324EC4B3300AF8F49 /* ListingsApi.swift in Sources */,
 				BDEF918924EC4C4800AF8F49 /* Data+Extension.swift in Sources */,
+				BDEF919624EC5F3C00AF8F49 /* VehicleListCell.swift in Sources */,
 				BDEF918C24EC4E9600AF8F49 /* CarfaxList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

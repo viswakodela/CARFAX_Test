@@ -11,6 +11,7 @@ import Foundation
 struct VehicleDetail    : Decodable {
     let images          : VehicleImage
     let year            : Int
+    let id              : String
 }
 
 struct VehicleImage     : Decodable {

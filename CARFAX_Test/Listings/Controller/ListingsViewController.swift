@@ -12,12 +12,20 @@ class ListingsViewController: UIViewController {
     
     // MARK:- Properties
     private var vehicleListing      = [VehicleListViewModel]()
+    private lazy var dataSource     = makeDataSource()
+    private enum Section: CaseIterable {
+        case main
+    }
+    
+    private typealias DataSource    = UICollectionViewDiffableDataSource<Section, VehicleListViewModel>
+    private typealias Snapshot      = NSDiffableDataSourceSnapshot<Section, VehicleListViewModel>
     
     // MARK:- Layout Objects
     lazy var collectionView         : UICollectionView = {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.backgroundColor = .systemBackground
+        cv.register(VehicleListCell.self, forCellWithReuseIdentifier: VehicleListCell.cellId)
         return cv
     }()
     
@@ -48,13 +56,37 @@ class ListingsViewController: UIViewController {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                               heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(1),
-                                               heightDimension: .estimated(200))
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0,
+                                                     leading: 0,
+                                                     bottom: 2,
+                                                     trailing: 0)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                               heightDimension: .absolute(200))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize,
-                                                     subitems: [item])
+                                                     subitem: item,
+                                                     count: 1)
         let section = NSCollectionLayoutSection(group: group)
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
+    }
+    
+    private func makeDataSource() -> DataSource {
+        let dataSource = DataSource(collectionView: collectionView) { (cv, indexPath, viewModel) -> UICollectionViewCell? in
+            guard let cell = cv.dequeueReusableCell(withReuseIdentifier: VehicleListCell.cellId, for: indexPath) as? VehicleListCell
+                else { return nil }
+            cell.backgroundColor = .systemBlue
+            return cell
+        }
+        return dataSource
+    }
+    
+    private func applySnapshot(animatingDifferences: Bool = true) {
+        //eboxSpinner.remove()
+        var snapshot = Snapshot()
+        snapshot.appendSections(Section.allCases)
+        snapshot.appendItems(vehicleListing)
+        dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
     }
 }
 
@@ -69,6 +101,9 @@ private extension ListingsViewController {
                     print(error)
                 case .success(let list):
                     self.vehicleListing = list
+                    DispatchQueue.main.async {
+                        self.applySnapshot()
+                    }
                 }
         }
     }
