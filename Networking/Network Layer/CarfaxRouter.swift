@@ -8,11 +8,11 @@
 
 import Foundation
 
-class CarfaxRouter<Endpoint: EndPointType>: NSObject, NetworkRouter {
+public final class CarfaxRouter<Endpoint: EndPointType>: NSObject, NetworkRouter {
     
     private var task: URLSessionTask?
     
-    func request(_ route: Endpoint, completion: @escaping NetworkRouterCompletion) {
+    public func request(_ route: Endpoint, completion: @escaping NetworkRouterCompletion) {
         let session = URLSession.shared
         
         do {

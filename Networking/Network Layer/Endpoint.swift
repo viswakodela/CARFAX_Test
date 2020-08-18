@@ -23,7 +23,7 @@ public extension EndPointType {
     }
 
     var baseURL: URL {
-        return URL(string: "https://carfax-for-consumers.firebaseio.com/assignment.json")!
+        return URL(string: "https://carfax-for-consumers.firebaseio.com")!
     }
 }
 
