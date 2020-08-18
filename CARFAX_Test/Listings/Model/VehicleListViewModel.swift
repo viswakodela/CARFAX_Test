@@ -45,6 +45,10 @@ class VehicleListViewModel {
         "\(formatNumber(vehicleDetail.mileage))"
     }
     
+    var carDealerAddress: String {
+        vehicleDetail.dealer.address
+    }
+    
     // MARK:- init
     init(detail: VehicleDetail) {
         self.vehicleDetail             = detail

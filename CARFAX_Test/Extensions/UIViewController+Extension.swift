@@ -31,3 +31,21 @@ extension UIViewController {
     }
     
 }
+
+
+extension UIViewController {
+    /// Use this method to centre an UIImageView in the Nav Bar.
+    func addLogoToNavigationBarItem(image: UIImage?) {
+        let imageView = UIImageView(image: image)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.heightAnchor.constraint(equalToConstant: 36).isActive = true
+        imageView.contentMode = .center
+        imageView.clipsToBounds = true
+        
+        let contentView = UIView()
+        self.navigationItem.titleView = contentView
+        self.navigationItem.titleView?.addSubview(imageView)
+        imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+    }
+}

@@ -50,7 +50,8 @@ class VehicleListCell: UICollectionViewCell {
         sv.translatesAutoresizingMaskIntoConstraints = false
         sv.axis = .vertical
         sv.spacing = 2
-        sv.distribution = .fillEqually
+        sv.setCustomSpacing(10, after: detailsLabel)
+        sv.distribution = .fillProportionally
         return sv
     }()
     
@@ -101,7 +102,10 @@ class VehicleListCell: UICollectionViewCell {
                                                          attributes: [NSAttributedString.Key.font : UIFont.CustomFonts.semiBold15])
         let milageString = NSAttributedString(string: " | \(viewModel.vehicleMileage) Mi | ",
                                               attributes: [NSAttributedString.Key.font : UIFont.CustomFonts.regular15])
+        let addressString = NSAttributedString(string: viewModel.carDealerAddress,
+                                               attributes: [NSAttributedString.Key.font : UIFont.CustomFonts.regular15])
         attributedString.append(milageString)
+        attributedString.append(addressString)
         return attributedString
     }
 }

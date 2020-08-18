@@ -24,7 +24,7 @@ class ListingsViewController: UIViewController {
     private lazy var collectionView         : UICollectionView = {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.backgroundColor = UIColor.CustomColors.vehicleListBGColor
+        cv.backgroundColor = .systemBackground//UIColor.CustomColors.vehicleListBGColor
         cv.showsVerticalScrollIndicator = false
         cv.register(VehicleListCell.self, forCellWithReuseIdentifier: VehicleListCell.cellId)
         return cv
@@ -41,6 +41,7 @@ class ListingsViewController: UIViewController {
     
     // MARK:- Helpers
     private func configureViews() {
+        addLogoToNavigationBarItem(image: UIImage(named: "carfax"))
         view.backgroundColor = .systemBackground
         view.addSubview(collectionView)
     }
@@ -61,7 +62,7 @@ class ListingsViewController: UIViewController {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: 0,
                                                      leading: 0,
-                                                     bottom: 5,
+                                                     bottom: 10,
                                                      trailing: 0)
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
