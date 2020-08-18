@@ -53,6 +53,10 @@ class VehicleListViewModel {
         vehicleDetail.dealer.phone
     }
     
+    var dealerLocationCoordinates: (String, String) {
+        (vehicleDetail.dealer.latitude, vehicleDetail.dealer.longitude)
+    }
+    
     // MARK:- init
     init(detail: VehicleDetail) {
         self.vehicleDetail             = detail
