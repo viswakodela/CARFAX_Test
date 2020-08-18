@@ -46,7 +46,7 @@ class ListingsViewController: UIViewController {
     
     private func layoutView() {
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -64,7 +64,7 @@ class ListingsViewController: UIViewController {
                                                      trailing: 0)
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                               heightDimension: .absolute(200))
+                                               heightDimension: .absolute(280))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize,
                                                      subitem: item,
                                                      count: 1)
