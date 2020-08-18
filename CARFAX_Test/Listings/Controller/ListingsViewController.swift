@@ -65,7 +65,7 @@ class ListingsViewController: UIViewController {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                               heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0,
+        item.contentInsets = NSDirectionalEdgeInsets(top: 10,
                                                      leading: 0,
                                                      bottom: 10,
                                                      trailing: 0)
