@@ -1,5 +1,5 @@
 //
-//  VehicleList.swift
+//  VehicleDetail.swift
 //  CARFAX_Test
 //
 //  Created by Viswa Kodela on 2020-08-18.
@@ -8,8 +8,9 @@
 
 import Foundation
 
-struct VehicleList  : Decodable {
+struct VehicleDetail  : Decodable {
     let images      : VehicleImage
+    let year
 }
 
 struct VehicleImage : Decodable {

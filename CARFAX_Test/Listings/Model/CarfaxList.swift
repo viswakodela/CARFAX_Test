@@ -9,7 +9,7 @@
 import Foundation
 
 struct CarfaxList: Decodable {
-    let listings            : [VehicleList]
+    let listings            : [VehicleDetail]
     let page                : Int
     let pageSize            : Int
 }

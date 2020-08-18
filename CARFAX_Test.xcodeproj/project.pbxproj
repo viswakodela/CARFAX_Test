@@ -26,8 +26,9 @@
 		BDEF918624EC4B7F00AF8F49 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF918524EC4B7F00AF8F49 /* APIManager.swift */; };
 		BDEF918924EC4C4800AF8F49 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF918824EC4C4800AF8F49 /* Data+Extension.swift */; };
 		BDEF918C24EC4E9600AF8F49 /* CarfaxList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF918B24EC4E9600AF8F49 /* CarfaxList.swift */; };
-		BDEF918E24EC4ECD00AF8F49 /* VehicleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF918D24EC4ECD00AF8F49 /* VehicleList.swift */; };
+		BDEF918E24EC4ECD00AF8F49 /* VehicleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF918D24EC4ECD00AF8F49 /* VehicleDetail.swift */; };
 		BDEF919124EC529000AF8F49 /* DataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF919024EC529000AF8F49 /* DataDecoder.swift */; };
+		BDEF919324EC561600AF8F49 /* VehicleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF919224EC561600AF8F49 /* VehicleListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,8 +77,9 @@
 		BDEF918524EC4B7F00AF8F49 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		BDEF918824EC4C4800AF8F49 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		BDEF918B24EC4E9600AF8F49 /* CarfaxList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarfaxList.swift; sourceTree = "<group>"; };
-		BDEF918D24EC4ECD00AF8F49 /* VehicleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleList.swift; sourceTree = "<group>"; };
+		BDEF918D24EC4ECD00AF8F49 /* VehicleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetail.swift; sourceTree = "<group>"; };
 		BDEF919024EC529000AF8F49 /* DataDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDecoder.swift; sourceTree = "<group>"; };
+		BDEF919224EC561600AF8F49 /* VehicleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,7 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				BDEF918B24EC4E9600AF8F49 /* CarfaxList.swift */,
-				BDEF918D24EC4ECD00AF8F49 /* VehicleList.swift */,
+				BDEF918D24EC4ECD00AF8F49 /* VehicleDetail.swift */,
+				BDEF919224EC561600AF8F49 /* VehicleListViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -338,7 +341,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDEF918E24EC4ECD00AF8F49 /* VehicleList.swift in Sources */,
+				BDEF919324EC561600AF8F49 /* VehicleListViewModel.swift in Sources */,
+				BDEF918E24EC4ECD00AF8F49 /* VehicleDetail.swift in Sources */,
 				BDEF914924EC3DE400AF8F49 /* ListingsViewController.swift in Sources */,
 				BDEF914524EC3DE400AF8F49 /* AppDelegate.swift in Sources */,
 				BDEF919124EC529000AF8F49 /* DataDecoder.swift in Sources */,

@@ -9,12 +9,30 @@
 import UIKit
 
 class ListingsViewController: UIViewController {
-
+    
+    // MARK:- Properties
+    private var vehicleListing      = [VehicleListViewModel]()
+    
+    // MARK:- Life cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchListings()
+    }
+}
+
+// MARK:- Networking Code
+private extension ListingsViewController {
+    func fetchListings() {
         APIManager
             .shared
-            .fetchVehicleListings()
+            .fetchVehicleListings { (result) in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let list):
+                    self.vehicleListing = list
+                }
+        }
     }
 }
 
