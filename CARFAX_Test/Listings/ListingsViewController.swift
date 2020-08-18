@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ListingsViewController.swift
 //  CARFAX_Test
 //
 //  Created by Viswa Kodela on 2020-08-18.
@@ -8,13 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ListingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
 
