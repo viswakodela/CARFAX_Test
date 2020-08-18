@@ -25,6 +25,9 @@
 		BDEF918324EC4B3300AF8F49 /* ListingsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF918224EC4B3300AF8F49 /* ListingsApi.swift */; };
 		BDEF918624EC4B7F00AF8F49 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF918524EC4B7F00AF8F49 /* APIManager.swift */; };
 		BDEF918924EC4C4800AF8F49 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF918824EC4C4800AF8F49 /* Data+Extension.swift */; };
+		BDEF918C24EC4E9600AF8F49 /* CarfaxList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF918B24EC4E9600AF8F49 /* CarfaxList.swift */; };
+		BDEF918E24EC4ECD00AF8F49 /* VehicleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF918D24EC4ECD00AF8F49 /* VehicleList.swift */; };
+		BDEF919124EC529000AF8F49 /* DataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF919024EC529000AF8F49 /* DataDecoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,9 @@
 		BDEF918224EC4B3300AF8F49 /* ListingsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsApi.swift; sourceTree = "<group>"; };
 		BDEF918524EC4B7F00AF8F49 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		BDEF918824EC4C4800AF8F49 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
+		BDEF918B24EC4E9600AF8F49 /* CarfaxList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarfaxList.swift; sourceTree = "<group>"; };
+		BDEF918D24EC4ECD00AF8F49 /* VehicleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleList.swift; sourceTree = "<group>"; };
+		BDEF919024EC529000AF8F49 /* DataDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDecoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,7 @@
 				BDEF918424EC4B6600AF8F49 /* NetworkManager */,
 				BDEF917F24EC4AC000AF8F49 /* Listings */,
 				BDEF918724EC4C3200AF8F49 /* Extensions */,
+				BDEF918F24EC528200AF8F49 /* Decoder */,
 				BDEF914A24EC3DE400AF8F49 /* Main.storyboard */,
 				BDEF914D24EC3DE700AF8F49 /* Assets.xcassets */,
 				BDEF914F24EC3DE700AF8F49 /* LaunchScreen.storyboard */,
@@ -162,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				BDEF918124EC4B2000AF8F49 /* Api */,
+				BDEF918A24EC4D8800AF8F49 /* Model */,
 				BDEF918024EC4B1600AF8F49 /* Controller */,
 			);
 			path = Listings;
@@ -197,6 +205,23 @@
 				BDEF918824EC4C4800AF8F49 /* Data+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BDEF918A24EC4D8800AF8F49 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BDEF918B24EC4E9600AF8F49 /* CarfaxList.swift */,
+				BDEF918D24EC4ECD00AF8F49 /* VehicleList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BDEF918F24EC528200AF8F49 /* Decoder */ = {
+			isa = PBXGroup;
+			children = (
+				BDEF919024EC529000AF8F49 /* DataDecoder.swift */,
+			);
+			path = Decoder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,12 +338,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDEF918E24EC4ECD00AF8F49 /* VehicleList.swift in Sources */,
 				BDEF914924EC3DE400AF8F49 /* ListingsViewController.swift in Sources */,
 				BDEF914524EC3DE400AF8F49 /* AppDelegate.swift in Sources */,
+				BDEF919124EC529000AF8F49 /* DataDecoder.swift in Sources */,
 				BDEF918624EC4B7F00AF8F49 /* APIManager.swift in Sources */,
 				BDEF914724EC3DE400AF8F49 /* SceneDelegate.swift in Sources */,
 				BDEF918324EC4B3300AF8F49 /* ListingsApi.swift in Sources */,
 				BDEF918924EC4C4800AF8F49 /* Data+Extension.swift in Sources */,
+				BDEF918C24EC4E9600AF8F49 /* CarfaxList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

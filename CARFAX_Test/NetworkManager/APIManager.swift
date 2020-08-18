@@ -16,10 +16,24 @@ class APIManager {
 }
 
 extension APIManager {
-    func fetchVehicleListings() {
+    func fetchVehicleListings(completion: @escaping (Result<CarfaxList, Error>) -> Void) {
         listingsApi
             .request(.fetchListings) { (data, resp, err) in
-                print(data?.prettyPrintedJSONString ?? "")
+                if let error = err {
+                    completion(.failure(error))
+                    return
+                }
+                
+                guard let data = data else { return }
+                DataDecoder.decodeData(as: CarfaxList.self,
+                                       from: data) { (list, err) in
+                                        if let error = err {
+                                            completion(.failure(error))
+                                            return
+                                        }
+                                        guard let vehicleList = list else { return }
+                                        completion(.success(vehicleList))
+                }
         }
     }
 }
