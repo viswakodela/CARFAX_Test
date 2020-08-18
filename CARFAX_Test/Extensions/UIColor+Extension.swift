@@ -26,7 +26,8 @@ extension UIColor {
     
     
     struct CustomColors {
-        static let grayColor        = UIColor(rgb: 0xbfbfbd)
+        static let grayColor            = UIColor(rgb: 0xbfbfbd)
+        static let vehicleListBGColor   = UIColor(white: 0.5, alpha: 0.5)
     }
 }
 

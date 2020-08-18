@@ -39,7 +39,7 @@ class VehicleListCell: UICollectionViewCell {
     let phoneNumberButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("438-923-8665", for: .normal)
-        button.titleLabel?.font = UIFont.CustomFonts.semiBold16
+        button.titleLabel?.font = UIFont.CustomFonts.semiBold15
         return button
     }()
     
@@ -71,20 +71,37 @@ class VehicleListCell: UICollectionViewCell {
     
     // MARK:- Helpers
     private func configureLayout() {
+        backgroundColor = .systemBackground
         addSubview(vehicleImageView)
         addSubview(bottomStackView)
         
         NSLayoutConstraint.activate([
-            vehicleImageView.topAnchor.constraint(equalTo: topAnchor),
+            vehicleImageView.topAnchor.constraint(equalTo: topAnchor, constant: 4),
             vehicleImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             vehicleImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             vehicleImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.7),
             
-            bottomStackView.topAnchor.constraint(equalTo: vehicleImageView.bottomAnchor),
+            bottomStackView.topAnchor.constraint(equalTo: vehicleImageView.bottomAnchor, constant: 4),
             bottomStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             bottomStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             bottomStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -2),
         ])
     }
     
+    func configureCell(with viewModel: VehicleListViewModel?) {
+        if let vehicleDetails = viewModel {
+            titleLabel.text = "\(vehicleDetails.vehicleYear) • \(vehicleDetails.vehicleMake) \(vehicleDetails.vehicleModel)"
+            detailsLabel.attributedText = createAttributedString(for: vehicleDetails)
+            vehicleImageView.loadImage(urlString: vehicleDetails.vehicleHDImage)
+        }
+    }
+    
+    private func createAttributedString(for viewModel: VehicleListViewModel) -> NSAttributedString {
+        let attributedString = NSMutableAttributedString(string: viewModel.vehiclePrice,
+                                                         attributes: [NSAttributedString.Key.font : UIFont.CustomFonts.semiBold15])
+        let milageString = NSAttributedString(string: " | \(viewModel.vehicleMileage) Mi | ",
+                                              attributes: [NSAttributedString.Key.font : UIFont.CustomFonts.regular15])
+        attributedString.append(milageString)
+        return attributedString
+    }
 }

@@ -29,6 +29,22 @@ class VehicleListViewModel {
         vehicleDetail.images.firstPhoto.small
     }
     
+    var vehicleModel: String {
+        vehicleDetail.model
+    }
+    
+    var vehicleMake: String {
+        vehicleDetail.make
+    }
+    
+    var vehiclePrice: String {
+        vehicleDetail.currentPrice.formattedPrice
+    }
+    
+    var vehicleMileage: String {
+        "\(formatNumber(vehicleDetail.mileage))"
+    }
+    
     // MARK:- init
     init(detail: VehicleDetail) {
         self.vehicleDetail             = detail

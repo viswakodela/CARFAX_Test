@@ -24,7 +24,7 @@ class ListingsViewController: UIViewController {
     private lazy var collectionView         : UICollectionView = {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.backgroundColor = .systemBackground
+        cv.backgroundColor = UIColor.CustomColors.vehicleListBGColor
         cv.showsVerticalScrollIndicator = false
         cv.register(VehicleListCell.self, forCellWithReuseIdentifier: VehicleListCell.cellId)
         return cv
@@ -41,6 +41,7 @@ class ListingsViewController: UIViewController {
     
     // MARK:- Helpers
     private func configureViews() {
+        view.backgroundColor = .systemBackground
         view.addSubview(collectionView)
     }
     
@@ -60,11 +61,11 @@ class ListingsViewController: UIViewController {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: 0,
                                                      leading: 0,
-                                                     bottom: 2,
+                                                     bottom: 5,
                                                      trailing: 0)
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                               heightDimension: .absolute(280))
+                                               heightDimension: .absolute(300))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize,
                                                      subitem: item,
                                                      count: 1)
@@ -77,6 +78,8 @@ class ListingsViewController: UIViewController {
         let dataSource = DataSource(collectionView: collectionView) { (cv, indexPath, viewModel) -> UICollectionViewCell? in
             guard let cell = cv.dequeueReusableCell(withReuseIdentifier: VehicleListCell.cellId, for: indexPath) as? VehicleListCell
                 else { return nil }
+            let vehicleListModel = self.dataSource.itemIdentifier(for: indexPath)
+            cell.configureCell(with: vehicleListModel)
             return cell
         }
         return dataSource

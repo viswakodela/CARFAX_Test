@@ -12,6 +12,10 @@ struct VehicleDetail    : Decodable {
     let images          : VehicleImage
     let year            : Int
     let id              : String
+    let make            : String
+    let model           : String
+    let currentPrice    : Int
+    let mileage         : Int
 }
 
 struct VehicleImage     : Decodable {

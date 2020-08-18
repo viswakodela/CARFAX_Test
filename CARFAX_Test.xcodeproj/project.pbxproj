@@ -34,6 +34,9 @@
 		BDEF919B24EC62CA00AF8F49 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF919A24EC62CA00AF8F49 /* LoadingViewController.swift */; };
 		BDEF919D24EC62E800AF8F49 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF919C24EC62E800AF8F49 /* UIColor+Extension.swift */; };
 		BDEF919F24EC638200AF8F49 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF919E24EC638200AF8F49 /* UIFont+Extension.swift */; };
+		BDEF91A124EC6E9E00AF8F49 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF91A024EC6E9E00AF8F49 /* UIImageView+Extension.swift */; };
+		BDEF91A324EC74B100AF8F49 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF91A224EC74B100AF8F49 /* Int+Extension.swift */; };
+		BDEF91A524EC77C600AF8F49 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF91A424EC77C600AF8F49 /* Double+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +93,9 @@
 		BDEF919A24EC62CA00AF8F49 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		BDEF919C24EC62E800AF8F49 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BDEF919E24EC638200AF8F49 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		BDEF91A024EC6E9E00AF8F49 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		BDEF91A224EC74B100AF8F49 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		BDEF91A424EC77C600AF8F49 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +226,9 @@
 				BDEF919824EC628A00AF8F49 /* UIViewController+Extension.swift */,
 				BDEF919C24EC62E800AF8F49 /* UIColor+Extension.swift */,
 				BDEF919E24EC638200AF8F49 /* UIFont+Extension.swift */,
+				BDEF91A024EC6E9E00AF8F49 /* UIImageView+Extension.swift */,
+				BDEF91A224EC74B100AF8F49 /* Int+Extension.swift */,
+				BDEF91A424EC77C600AF8F49 /* Double+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -374,7 +383,9 @@
 			files = (
 				BDEF919924EC628A00AF8F49 /* UIViewController+Extension.swift in Sources */,
 				BDEF919324EC561600AF8F49 /* VehicleListViewModel.swift in Sources */,
+				BDEF91A524EC77C600AF8F49 /* Double+Extension.swift in Sources */,
 				BDEF918E24EC4ECD00AF8F49 /* VehicleDetail.swift in Sources */,
+				BDEF91A324EC74B100AF8F49 /* Int+Extension.swift in Sources */,
 				BDEF919F24EC638200AF8F49 /* UIFont+Extension.swift in Sources */,
 				BDEF914924EC3DE400AF8F49 /* ListingsViewController.swift in Sources */,
 				BDEF914524EC3DE400AF8F49 /* AppDelegate.swift in Sources */,
@@ -382,6 +393,7 @@
 				BDEF918624EC4B7F00AF8F49 /* APIManager.swift in Sources */,
 				BDEF919D24EC62E800AF8F49 /* UIColor+Extension.swift in Sources */,
 				BDEF914724EC3DE400AF8F49 /* SceneDelegate.swift in Sources */,
+				BDEF91A124EC6E9E00AF8F49 /* UIImageView+Extension.swift in Sources */,
 				BDEF918324EC4B3300AF8F49 /* ListingsApi.swift in Sources */,
 				BDEF918924EC4C4800AF8F49 /* Data+Extension.swift in Sources */,
 				BDEF919624EC5F3C00AF8F49 /* VehicleListCell.swift in Sources */,
