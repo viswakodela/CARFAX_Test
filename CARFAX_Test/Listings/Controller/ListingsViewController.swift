@@ -21,13 +21,15 @@ class ListingsViewController: UIViewController {
     private typealias Snapshot      = NSDiffableDataSourceSnapshot<Section, VehicleListViewModel>
     
     // MARK:- Layout Objects
-    lazy var collectionView         : UICollectionView = {
+    private lazy var collectionView         : UICollectionView = {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.backgroundColor = .systemBackground
+        cv.showsVerticalScrollIndicator = false
         cv.register(VehicleListCell.self, forCellWithReuseIdentifier: VehicleListCell.cellId)
         return cv
     }()
+    private let loadingView         = LoadingViewController(isVerticalAligned: true)
     
     // MARK:- Life cycle methods
     override func viewDidLoad() {
@@ -75,14 +77,12 @@ class ListingsViewController: UIViewController {
         let dataSource = DataSource(collectionView: collectionView) { (cv, indexPath, viewModel) -> UICollectionViewCell? in
             guard let cell = cv.dequeueReusableCell(withReuseIdentifier: VehicleListCell.cellId, for: indexPath) as? VehicleListCell
                 else { return nil }
-            cell.backgroundColor = .systemBlue
             return cell
         }
         return dataSource
     }
     
     private func applySnapshot(animatingDifferences: Bool = true) {
-        //eboxSpinner.remove()
         var snapshot = Snapshot()
         snapshot.appendSections(Section.allCases)
         snapshot.appendItems(vehicleListing)
@@ -93,15 +93,18 @@ class ListingsViewController: UIViewController {
 // MARK:- Networking Code
 private extension ListingsViewController {
     func fetchListings() {
+        add(loadingView)
         APIManager
             .shared
-            .fetchVehicleListings { (result) in
+            .fetchVehicleListings { [weak self] (result) in
+                guard let `self` = self else { return }
                 switch result {
                 case .failure(let error):
                     print(error)
                 case .success(let list):
                     self.vehicleListing = list
                     DispatchQueue.main.async {
+                        self.loadingView.remove()
                         self.applySnapshot()
                     }
                 }
