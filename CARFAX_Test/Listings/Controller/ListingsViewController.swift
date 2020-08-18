@@ -76,11 +76,14 @@ class ListingsViewController: UIViewController {
     }
     
     private func makeDataSource() -> DataSource {
-        let dataSource = DataSource(collectionView: collectionView) { (cv, indexPath, viewModel) -> UICollectionViewCell? in
+        let dataSource = DataSource(collectionView: collectionView) { [weak self] (cv, indexPath, viewModel) -> UICollectionViewCell? in
+            guard let self = self else { return nil }
             guard let cell = cv.dequeueReusableCell(withReuseIdentifier: VehicleListCell.cellId, for: indexPath) as? VehicleListCell
                 else { return nil }
             let vehicleListModel = self.dataSource.itemIdentifier(for: indexPath)
             cell.configureCell(with: vehicleListModel)
+            cell.phoneNumberButton.tag = indexPath.item
+            cell.phoneNumberButton.addTarget(self, action: #selector(self.handleTapToPhone), for: .touchUpInside)
             return cell
         }
         return dataSource
@@ -116,3 +119,14 @@ private extension ListingsViewController {
     }
 }
 
+// MARK:- Action Methods
+private extension ListingsViewController {
+    @objc
+    func handleTapToPhone(button: UIButton) {
+        let dealerNumber = vehicleListing[button.tag].carDealerContact
+        if let url = URL(string: "tel://" + dealerNumber),
+            UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+    }
+}

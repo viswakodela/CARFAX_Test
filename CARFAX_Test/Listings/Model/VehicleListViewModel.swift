@@ -49,6 +49,10 @@ class VehicleListViewModel {
         vehicleDetail.dealer.address
     }
     
+    var carDealerContact: String {
+        vehicleDetail.dealer.phone
+    }
+    
     // MARK:- init
     init(detail: VehicleDetail) {
         self.vehicleDetail             = detail

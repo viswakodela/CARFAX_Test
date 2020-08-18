@@ -20,15 +20,16 @@ struct VehicleDetail    : Decodable {
     
     struct Dealer       : Decodable {
         let address     : String
+        let phone       : String
     }
-}
 
-struct VehicleImage     : Decodable {
-    let firstPhoto      : ImageSize
-}
+    struct VehicleImage     : Decodable {
+        let firstPhoto      : ImageSize
+    }
 
-struct ImageSize        : Decodable {
-    let large           : String
-    let medium          : String
-    let small           : String
+    struct ImageSize        : Decodable {
+        let large           : String
+        let medium          : String
+        let small           : String
+    }
 }

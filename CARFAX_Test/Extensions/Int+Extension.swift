@@ -18,5 +18,4 @@ extension Int {
     var formattedPrice: String {
         "\(Int.numberFormatter.string(from: NSNumber(value: self)) ?? String(self))"
     }
-    
 }
