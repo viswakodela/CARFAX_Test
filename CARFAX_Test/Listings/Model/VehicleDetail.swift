@@ -21,6 +21,8 @@ struct VehicleDetail    : Decodable {
     struct Dealer       : Decodable {
         let address     : String
         let phone       : String
+        let latitude    : String
+        let longitude   : String
     }
 
     struct VehicleImage     : Decodable {

@@ -6,7 +6,7 @@
 //  Copyright © 2020 Viswa Kodela. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension String {
     func applyPatternOnNumbers(pattern: String, replacementCharacter: Character) -> String {
@@ -20,7 +20,19 @@ extension String {
         }
         return pureNumber
     }
+    
+    func callIfCallable(to number: String, viewController: UIViewController) {
+        if let url = URL(string: "tel://" + number),
+            UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        } else {
+            viewController.showAlert(with: "The number is not valid, please try again", actions: [
+                UIAlertAction(title: "Ok", style: .default, handler: nil)
+            ])
+        }
+    }
 }
+
 fileprivate extension String {
     func indexOf(char: Character) -> Int? {
         return firstIndex(of: char)?.utf16Offset(in: self)

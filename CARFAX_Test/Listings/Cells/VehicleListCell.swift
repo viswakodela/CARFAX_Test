@@ -33,12 +33,13 @@ class VehicleListCell: UICollectionViewCell {
         let label = UILabel()
         label.font = UIFont.CustomFonts.regular15
         label.text = "2014 Acura"
+        label.isUserInteractionEnabled = true
         return label
     }()
     
     let phoneNumberButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("438-923-8665", for: .normal)
+        button.setTitle("(###) ###-####", for: .normal)
         button.titleLabel?.font = UIFont.CustomFonts.semiBold15
         return button
     }()
@@ -105,7 +106,8 @@ class VehicleListCell: UICollectionViewCell {
         let milageString = NSAttributedString(string: " | \(viewModel.vehicleMileage) Mi | ",
                                               attributes: [NSAttributedString.Key.font : UIFont.CustomFonts.regular15])
         let addressString = NSAttributedString(string: viewModel.carDealerAddress,
-                                               attributes: [NSAttributedString.Key.font : UIFont.CustomFonts.regular15])
+                                               attributes: [NSAttributedString.Key.font : UIFont.CustomFonts.regular15,
+                                                            NSAttributedString.Key.foregroundColor : UIColor.systemBlue,])
         attributedString.append(milageString)
         attributedString.append(addressString)
         return attributedString

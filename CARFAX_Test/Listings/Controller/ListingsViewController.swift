@@ -31,6 +31,11 @@ class ListingsViewController: UIViewController {
     }()
     private let loadingView         = LoadingViewController(isVerticalAligned: true)
     
+    private lazy var gestureRecognizer = { [weak self] () -> UITapGestureRecognizer in
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self?.handleOpenMap))
+        return tapGesture
+    }
+    
     // MARK:- Life cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +88,9 @@ class ListingsViewController: UIViewController {
             let vehicleListModel = self.dataSource.itemIdentifier(for: indexPath)
             cell.configureCell(with: vehicleListModel)
             cell.phoneNumberButton.tag = indexPath.item
+            cell.detailsLabel.tag = indexPath.item
             cell.phoneNumberButton.addTarget(self, action: #selector(self.handleTapToPhone), for: .touchUpInside)
+            cell.detailsLabel.addGestureRecognizer(self.gestureRecognizer())
             return cell
         }
         return dataSource
@@ -124,13 +131,22 @@ private extension ListingsViewController {
     @objc
     func handleTapToPhone(button: UIButton) {
         let dealerNumber = vehicleListing[button.tag].carDealerContact
-        if let url = URL(string: "tel://" + dealerNumber),
-            UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url)
-        } else {
-            self.showAlert(with: "The number is not valid, please try again", actions: [
-                UIAlertAction(title: "Ok", style: .default, handler: nil)
-            ])
+        dealerNumber.callIfCallable(to: dealerNumber, viewController: self)
+    }
+    
+    @objc func handleOpenMap(gesture: UITapGestureRecognizer) {
+        if let label = gesture.view as? UILabel {
+            let dealerLocationLatitude = vehicleListing[label.tag].dealerLocationCoordinates.0
+            let dealerLocationLongitude = vehicleListing[label.tag].dealerLocationCoordinates.1
+            
+            // User can able to open Google Maps if he/she has the app installed.
+            if let url = URL(string: "comgooglemaps://?center=\(dealerLocationLatitude),\(dealerLocationLongitude)&zoom=14&views=traffic") {
+                if UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url)
+                } else {
+                    NSLog("Can't use Apple Maps");
+                }
+            }
         }
     }
 }
