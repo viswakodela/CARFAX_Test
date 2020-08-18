@@ -9,7 +9,7 @@
 import Foundation
 
 /// EndpointType is mainly responsible to create the *URLRequest* by abstracting all the required content that are responsible to create the **Route**
-protocol EndPointType {
+public protocol EndPointType {
     var baseURL: URL { get }
     var path: String { get }
     var httpMethod: HTTPMethod { get }
@@ -17,7 +17,7 @@ protocol EndPointType {
     var headers: HTTPHeaders? { get }
 }
 
-extension EndPointType {
+public extension EndPointType {
     var headers: HTTPHeaders? {
         return HTTPHeaders()
     }
