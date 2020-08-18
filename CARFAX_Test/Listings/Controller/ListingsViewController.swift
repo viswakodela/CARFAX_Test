@@ -131,14 +131,7 @@ private extension ListingsViewController {
     @objc
     func handleTapToPhone(button: UIButton) {
         let dealerNumber = vehicleListing[button.tag].carDealerContact
-        if let url = URL(string: "tel://" + dealerNumber),
-            UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url)
-        } else {
-            self.showAlert(with: "The number is not valid, please try again", actions: [
-                UIAlertAction(title: "Ok", style: .default, handler: nil)
-            ])
-        }
+        dealerNumber.callIfCallable(to: dealerNumber, viewController: self)
     }
     
     @objc func handleOpenMap(gesture: UITapGestureRecognizer) {
@@ -148,9 +141,11 @@ private extension ListingsViewController {
             
             // User can able to open Google Maps if he/she has the app installed.
             if let url = URL(string: "comgooglemaps://?center=\(dealerLocationLatitude),\(dealerLocationLongitude)&zoom=14&views=traffic") {
-                UIApplication.shared.open(url)
-            } else {
-                NSLog("Can't use Apple Maps");
+                if UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url)
+                } else {
+                    NSLog("Can't use Apple Maps");
+                }
             }
         }
     }
