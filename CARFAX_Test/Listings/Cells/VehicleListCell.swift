@@ -94,6 +94,8 @@ class VehicleListCell: UICollectionViewCell {
             titleLabel.text = "\(vehicleDetails.vehicleYear) • \(vehicleDetails.vehicleMake) \(vehicleDetails.vehicleModel)"
             detailsLabel.attributedText = createAttributedString(for: vehicleDetails)
             vehicleImageView.loadImage(urlString: vehicleDetails.vehicleHDImage)
+            let dealerPhone = vehicleDetails.carDealerContact.applyPatternOnNumbers(pattern: "(###) ###-####", replacementCharacter: "#")
+            phoneNumberButton.setTitle(dealerPhone, for: .normal)
         }
     }
     
