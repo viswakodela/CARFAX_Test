@@ -17,6 +17,7 @@
 		BDEF916424EC3EFF00AF8F49 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDEF915D24EC3EFE00AF8F49 /* Networking.framework */; };
 		BDEF916524EC3EFF00AF8F49 /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDEF915D24EC3EFE00AF8F49 /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BDEF916C24EC3F8100AF8F49 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF916B24EC3F8100AF8F49 /* Endpoint.swift */; };
+		BDEF916E24EC415900AF8F49 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF916D24EC415900AF8F49 /* NetworkRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		BDEF915F24EC3EFE00AF8F49 /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		BDEF916024EC3EFE00AF8F49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDEF916B24EC3F8100AF8F49 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		BDEF916D24EC415900AF8F49 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				BDEF916B24EC3F8100AF8F49 /* Endpoint.swift */,
+				BDEF916D24EC415900AF8F49 /* NetworkRouter.swift */,
 			);
 			path = "Network Layer";
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDEF916C24EC3F8100AF8F49 /* Endpoint.swift in Sources */,
+				BDEF916E24EC415900AF8F49 /* NetworkRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
