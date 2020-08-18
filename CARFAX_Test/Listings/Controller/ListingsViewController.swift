@@ -12,6 +12,9 @@ class ListingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        APIManager
+            .shared
+            .fetchVehicleListings()
     }
 }
 

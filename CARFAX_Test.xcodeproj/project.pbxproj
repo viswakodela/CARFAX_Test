@@ -22,6 +22,9 @@
 		BDEF917224EC42C600AF8F49 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF917124EC42C600AF8F49 /* URLParameterEncoder.swift */; };
 		BDEF917424EC430700AF8F49 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF917324EC430700AF8F49 /* AppError.swift */; };
 		BDEF917624EC436500AF8F49 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF917524EC436500AF8F49 /* JSONParameterEncoder.swift */; };
+		BDEF918324EC4B3300AF8F49 /* ListingsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF918224EC4B3300AF8F49 /* ListingsApi.swift */; };
+		BDEF918624EC4B7F00AF8F49 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF918524EC4B7F00AF8F49 /* APIManager.swift */; };
+		BDEF918924EC4C4800AF8F49 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF918824EC4C4800AF8F49 /* Data+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,9 @@
 		BDEF917124EC42C600AF8F49 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		BDEF917324EC430700AF8F49 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		BDEF917524EC436500AF8F49 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		BDEF918224EC4B3300AF8F49 /* ListingsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsApi.swift; sourceTree = "<group>"; };
+		BDEF918524EC4B7F00AF8F49 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		BDEF918824EC4C4800AF8F49 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +115,9 @@
 			isa = PBXGroup;
 			children = (
 				BDEF917E24EC4A9B00AF8F49 /* Core */,
+				BDEF918424EC4B6600AF8F49 /* NetworkManager */,
 				BDEF917F24EC4AC000AF8F49 /* Listings */,
+				BDEF918724EC4C3200AF8F49 /* Extensions */,
 				BDEF914A24EC3DE400AF8F49 /* Main.storyboard */,
 				BDEF914D24EC3DE700AF8F49 /* Assets.xcassets */,
 				BDEF914F24EC3DE700AF8F49 /* LaunchScreen.storyboard */,
@@ -153,9 +161,42 @@
 		BDEF917F24EC4AC000AF8F49 /* Listings */ = {
 			isa = PBXGroup;
 			children = (
-				BDEF914824EC3DE400AF8F49 /* ListingsViewController.swift */,
+				BDEF918124EC4B2000AF8F49 /* Api */,
+				BDEF918024EC4B1600AF8F49 /* Controller */,
 			);
 			path = Listings;
+			sourceTree = "<group>";
+		};
+		BDEF918024EC4B1600AF8F49 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BDEF914824EC3DE400AF8F49 /* ListingsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BDEF918124EC4B2000AF8F49 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				BDEF918224EC4B3300AF8F49 /* ListingsApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		BDEF918424EC4B6600AF8F49 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				BDEF918524EC4B7F00AF8F49 /* APIManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		BDEF918724EC4C3200AF8F49 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BDEF918824EC4C4800AF8F49 /* Data+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,7 +315,10 @@
 			files = (
 				BDEF914924EC3DE400AF8F49 /* ListingsViewController.swift in Sources */,
 				BDEF914524EC3DE400AF8F49 /* AppDelegate.swift in Sources */,
+				BDEF918624EC4B7F00AF8F49 /* APIManager.swift in Sources */,
 				BDEF914724EC3DE400AF8F49 /* SceneDelegate.swift in Sources */,
+				BDEF918324EC4B3300AF8F49 /* ListingsApi.swift in Sources */,
+				BDEF918924EC4C4800AF8F49 /* Data+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
